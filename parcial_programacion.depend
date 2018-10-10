@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1538700151 source:/home/facundo_fernandez/parcial_programacion/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	"utn.h"
+	"parcial_programacion.h"
+
+1538087820 /home/facundo_fernandez/parcial_programacion/utn.h
+
+1538699859 /home/facundo_fernandez/parcial_programacion/parcial_programacion.h
+
+1538699863 source:/home/facundo_fernandez/parcial_programacion/utn.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	"utn.h"
+
+1538701513 source:/home/facundo_fernandez/parcial_programacion/parcial_programacion.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	"utn.h"
+	"parcial_programacion.h"
+
