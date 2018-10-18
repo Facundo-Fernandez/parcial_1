@@ -3,7 +3,9 @@
 #include <string.h>
 #include <unistd.h>
 #include "utn.h"
-#include "parcial_programacion.h"
+#include "clientes.h"
+#include "ventas.h"
+#include "informes.h"
 
 int main()
 {
@@ -12,35 +14,46 @@ int main()
     int selectedOption;
 
     printf("ventaDeAfiches v0.1");
-    initAfiches(listaDeAfiches, MAX_AFICHES);
-    initClient(listaDeClientes, MAX_CLIENTES);
+    ventas_initAfiches(listaDeAfiches, MAX_AFICHES);
+    client_initClient(listaDeClientes, MAX_CLIENTES);
+    cargaForzada(listaDeClientes);
 menu:
     printf("\n-------------------------------- Menu principal --------------------------------\n\n");
-    printf("Seleccione la opción que desea llevar a cabo:\n\n1) Alta de cliente\n2) Modificar datos de cliente\n3) Baja de cliente\n4) Vender afiches\n5) Editar venta\n6) Cobrar venta\n7) Imprimir clientes\n\nOpción elegida: ");
+    printf("Seleccione la opción que desea llevar a cabo:\n\n1) Alta de cliente\n2) Modificar datos de cliente\n3) Baja de cliente\n4) Vender afiches\n5) Editar venta\n6) Cobrar venta\n7) Imprimir clientes\n8) Informes\n\nOpción elegida: ");
     scanf("%d", &selectedOption);
     switch(selectedOption)
     {
     case 1:
-        addClient(listaDeClientes, MAX_CLIENTES);
+        client_addClient(listaDeClientes, MAX_CLIENTES);
         break;
     case 2:
-        modifyClient(listaDeClientes, MAX_CLIENTES);
+        client_modifyClient(listaDeClientes, MAX_CLIENTES);
         break;
     case 3:
-        removeClient(listaDeClientes, MAX_CLIENTES);
+        client_removeClient(listaDeClientes, MAX_CLIENTES);
         break;
     case 4:
-        sellPosters(listaDeAfiches, MAX_AFICHES);
+        ventas_sellPosters(listaDeClientes, listaDeAfiches, MAX_AFICHES);
         break;
     case 5:
-        printPosters(listaDeAfiches, MAX_AFICHES);
-        editTransaction(listaDeAfiches, MAX_AFICHES);
+        ventas_printPosters(listaDeAfiches, MAX_AFICHES);
+        ventas_editTransaction(listaDeAfiches, MAX_AFICHES);
         break;
     case 6:
-        cobrarVenta(listaDeAfiches,MAX_AFICHES,listaDeClientes,MAX_CLIENTES);
+        ventas_cobrarVenta(listaDeAfiches,MAX_AFICHES,listaDeClientes,MAX_CLIENTES);
         break;
     case 7:
-        printClients(listaDeAfiches, MAX_AFICHES, listaDeClientes, MAX_CLIENTES);
+        client_printClients(listaDeAfiches, MAX_AFICHES, listaDeClientes, MAX_CLIENTES);
+        break;
+    case 8:
+        informes_printClienteConMasPendientes(listaDeClientes, listaDeAfiches, MAX_CLIENTES, MAX_AFICHES);
+        informes_printClienteConMasCobradas(listaDeClientes, listaDeAfiches, MAX_CLIENTES, MAX_AFICHES);
+        informes_printClienteConMasVentas(listaDeClientes, listaDeAfiches, MAX_CLIENTES, MAX_AFICHES);
+        informes_printClienteConMasAfichesPendientes(listaDeClientes, listaDeAfiches, MAX_CLIENTES, MAX_AFICHES);
+        informes_zonaConMenosAfichesVendidos(listaDeAfiches, MAX_AFICHES);
+        informes_cantidadClientesMenos1000Afiches(listaDeClientes, listaDeAfiches, MAX_CLIENTES, MAX_AFICHES);
+        informes_cantidadDeAfichesVendidosPorZona(listaDeAfiches, MAX_AFICHES);
+        informes_printListaDeVentasOrdenadaPorZona(listaDeAfiches, MAX_AFICHES);
         break;
     default:
         printf("\n%d no es una opción valida.\n", selectedOption);
@@ -61,3 +74,4 @@ finDeOperacion:
             goto finDeOperacion;
     }
 }
+

@@ -1,11 +1,13 @@
 # depslib dependency file v1.0
-1538700151 source:/home/facundo_fernandez/parcial_programacion/main.c
+1539897764 source:/home/facundo_fernandez/parcial_programacion/main.c
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	<unistd.h>
 	"utn.h"
-	"parcial_programacion.h"
+	"clientes.h"
+	"ventas.h"
+	"informes.h"
 
 1538087820 /home/facundo_fernandez/parcial_programacion/utn.h
 
@@ -25,4 +27,37 @@
 	<unistd.h>
 	"utn.h"
 	"parcial_programacion.h"
+
+1539824297 source:/home/facundo_fernandez/parcial_programacion/clientes.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	"utn.h"
+	"clientes.h"
+	"ventas.h"
+
+1539215921 /home/facundo_fernandez/parcial_programacion/clientes.h
+
+1539215228 /home/facundo_fernandez/parcial_programacion/ventas.h
+
+1539875301 source:/home/facundo_fernandez/parcial_programacion/ventas.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	"utn.h"
+	"clientes.h"
+	"ventas.h"
+
+1539897998 source:/home/facundo_fernandez/parcial_programacion/informes.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	"utn.h"
+	"clientes.h"
+	"ventas.h"
+
+1539898582 /home/facundo_fernandez/parcial_programacion/informes.h
 
